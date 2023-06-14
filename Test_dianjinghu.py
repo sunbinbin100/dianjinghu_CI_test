@@ -1,3 +1,6 @@
+# encoding: utf-8
+# @Author  : sun
+
 import datetime
 import json, logging
 import random, requests
@@ -20,9 +23,6 @@ def get_djh_user_info(phone, r_l, typ):
 
 
 cpprint(get_djh_user_info(15221466224, 1, 1))
-
-
-
 
 
 
