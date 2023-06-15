@@ -1,11 +1,10 @@
 # encoding: utf-8
-# @Author  : sun
 
 import requests
 # import datetime, random
 # import json, logging
 # import re, sys, copy, ast, time
-# from prettyprinter import cpprint
+from prettyprinter import cpprint
 # from functools import reduce
 # from collections import defaultdict, OrderedDict, namedtuple, deque, Counter
 # from collections.abc import Iterable, Iterator
@@ -30,15 +29,16 @@ def change_djh_nickname(nickname):
     return resp2.json()
 
 
-print(change_djh_nickname('陈冬123123'))
+if __name__ == "__main__":
+    print(change_djh_nickname('sun12'))
 
+    payload0 = {"mobile": 15221466224, "password": 'e10adc3949ba59abbe56e057f20f883e', 'remember_login': 1, 'type': 1}
+    resp1 = requests.post(url='https://www.dianjinghu.com/web.php?m=home&c=login&a=log', data=payload0)
+    # print(resp1.json())
+    params = {'m': 'home', 'c': 'memberNew', 'a': 'center'}
+    respo3 = requests.get(url='https://www.dianjinghu.com/web.php?m=home&c=memberNew&a=center', cookies=resp1.cookies, params=params)
+    cpprint(respo3.json())
 
-# payload0 = {"mobile": 15221466224, "password": 'e10adc3949ba59abbe56e057f20f883e', 'remember_login': 1, 'type': 1}
-# resp1 = requests.post(url='https://www.dianjinghu.com/web.php?m=home&c=login&a=log', data=payload0)
-# # print(resp1.json())
-# payload1 = {"nickname": '帆布鞋1'}
-# resp2 = requests.post(url='https://www.dianjinghu.com/web.php/home/member/chNickname/', cookies=resp1.cookies, data=payload1)
-# print(resp2.json())
 
 
 
