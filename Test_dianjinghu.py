@@ -30,14 +30,14 @@ def change_djh_nickname(nickname):
 
 
 if __name__ == "__main__":
-    print(change_djh_nickname('sun12'))
+    print(change_djh_nickname('sun18'))
 
     payload0 = {"mobile": 15221466224, "password": 'e10adc3949ba59abbe56e057f20f883e', 'remember_login': 1, 'type': 1}
     resp1 = requests.post(url='https://www.dianjinghu.com/web.php?m=home&c=login&a=log', data=payload0)
     # print(resp1.json())
     params = {'m': 'home', 'c': 'memberNew', 'a': 'center'}
     respo3 = requests.get(url='https://www.dianjinghu.com/web.php?m=home&c=memberNew&a=center', cookies=resp1.cookies, params=params)
-    cpprint(respo3.json())
+    print(respo3.json())
 
 
 
