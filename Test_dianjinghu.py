@@ -30,7 +30,7 @@ def change_djh_nickname(nickname):
     return resp2.json()
 
 
-print(change_djh_nickname('陈冬123'))
+print(change_djh_nickname('陈冬123123'))
 
 
 # payload0 = {"mobile": 15221466224, "password": 'e10adc3949ba59abbe56e057f20f883e', 'remember_login': 1, 'type': 1}
@@ -39,8 +39,6 @@ print(change_djh_nickname('陈冬123'))
 # payload1 = {"nickname": '帆布鞋1'}
 # resp2 = requests.post(url='https://www.dianjinghu.com/web.php/home/member/chNickname/', cookies=resp1.cookies, data=payload1)
 # print(resp2.json())
-
-
 
 
 
