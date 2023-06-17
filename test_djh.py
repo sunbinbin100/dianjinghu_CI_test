@@ -33,7 +33,7 @@ def change_djh_nickname(mobile, nickname):
     return resp2.json()
 
 
-print(change_djh_nickname(15221466224, 'sun24'))
+print(change_djh_nickname(15221466224, 'sun25'))
 print("运行成功~~~")
 
 # if __name__ == "__main__":
