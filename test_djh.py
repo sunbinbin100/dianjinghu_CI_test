@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-import requests
+import sys, requests
 # import datetime, random
 # import json, logging
 # import re, sys, copy, ast, time
@@ -11,13 +11,7 @@ from prettyprinter import cpprint
 
 
 # def get_djh_user_info(phone, r_l, typ):
-#     """查看用户信息"""
-#     payload = {"mobile": phone, "password": 'e10adc3949ba59abbe56e057f20f883e', 'remember_login': r_l, 'type': typ}
-#     respo1 = requests.post(url='https://www.dianjinghu.com/web.php?m=home&c=login&a=log', data=payload)
-#     # print(respo1.json())
-#     params = {'m': 'home', 'c': 'memberNew', 'a': 'center'}
-#     respo3 = requests.get(url='https://www.dianjinghu.com/web.php?m=home&c=memberNew&a=center', cookies=respo1.cookies, params=params)
-#     return respo3.json()
+
 
 def change_djh_nickname(mobile, nickname):
     """更改昵称接口"""
@@ -34,7 +28,13 @@ def change_djh_nickname(mobile, nickname):
     return resp2.json()
 
 
-print(change_djh_nickname(15221466224, 'sun26'))
+# 获取命令行输入的参数
+print(sys.argv)
+phone_number = sys.argv[1]
+nick_name = sys.argv[2]
+
+print(change_djh_nickname(phone_number, nick_name))
+
 
 # if __name__ == "__main__":
 #     print(change_djh_nickname(15221466224, 'sun20'))
