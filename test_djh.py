@@ -12,7 +12,6 @@ from prettyprinter import cpprint
 
 # def get_djh_user_info(phone, r_l, typ):
 
-
 def change_djh_nickname(mobile, nickname):
     """更改昵称接口"""
     # 先登录，提供cookie
@@ -29,16 +28,17 @@ def change_djh_nickname(mobile, nickname):
 
 
 # 获取命令行输入的参数
-print(sys.argv)
+print('获取到的参数列表为:', sys.argv)  # 列表。参数个数 应对应 jenkins里的Windows batch command中的参数个数
 phone_number = sys.argv[1]
 nick_name = sys.argv[2]
-
 print(change_djh_nickname(phone_number, nick_name))
+
+# PS：jenkins里用Boolean Parameter时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['test_djh.py', '15221466224', 'true']）
+# 想要变成python中的布尔值True和False，可以用语句判断一下，如：if a1 == 'true': a1 = True
 
 
 # if __name__ == "__main__":
 #     print(change_djh_nickname(15221466224, 'sun20'))
-
 
 
 
