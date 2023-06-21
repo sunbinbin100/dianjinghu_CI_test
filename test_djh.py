@@ -10,8 +10,8 @@ from prettyprinter import cpprint
 # from collections import defaultdict, OrderedDict, namedtuple, deque, Counter
 # from collections.abc import Iterable, Iterator
 
-
 # def get_djh_user_info(phone, r_l, typ):
+
 
 def change_djh_nickname(mobile, nickname):
     """更改昵称接口"""
@@ -27,16 +27,16 @@ def change_djh_nickname(mobile, nickname):
     cpprint(resp3.json())
     return resp2.json()
 
-# 获取命令行输入的参数（3种方法，其中sys.argv和argparse比较好）
-# print('获取到的参数列表为:', sys.argv)  # 列表。参数个数 应对应 jenkins里的Windows batch command中的参数个数
+# 获取命令行输入的参数（3种方法：https://zhuanlan.zhihu.com/p/508646581、https://blog.csdn.net/shawnchang777/article/details/112471573）
+# print('sys.argv方法 获取到的参数列表为:', sys.argv)  # 列表。参数个数 应对应 jenkins里的Windows batch command中的参数个数
 # phone_number, nick_name = sys.argv[1], sys.argv[2]
 # print(change_djh_nickname(phone_number, nick_name))
 
 
-# 创建解析器：parser（https://zhuanlan.zhihu.com/p/508646581、https://blog.csdn.net/shawnchang777/article/details/112471573）
+# 创建解析器：parser
 parser = argparse.ArgumentParser(description="用法：python test_djh.py --mobile xxx --nickname xxx。用-还是--具体看代码中的写法")
 parser.add_argument('--mobile', default=15221466224, action='store', required=False, help='用户手机号')  # 添加参数
-parser.add_argument('--nickname', default='帆布鞋丶', required=False, help='要改的昵称')
+parser.add_argument('--nickname', default='帆布鞋丶1', required=False, help='要改的昵称')
 # 参数前的--也可以用-，调用时与代码里写的一致即可
 # action：指定参数时可以触发六种操作。可不填，不填时，效果同action='store'
 # 调用参数时，参数名可不写全，会自动识别（所以，有参数都是m开头的单词时，就不能用--m了）
@@ -50,7 +50,7 @@ parser.add_argument('--nickname', default='帆布鞋丶', required=False, help='
 # parser.add_argument('--mode', default='train', choices=['train', 'predict'])
 
 args = parser.parse_args()  # 解析参数
-print('获取到的参数为:', args.mobile, args.nickname)  # 类型分别为int和str
+print('argparse库 获取到的参数为:', args.mobile, args.nickname)  # 类型分别为int和str。也可以用args.__dict__.items()取值
 phone_number1, nick_name1 = args.mobile, args.nickname
 print(change_djh_nickname(phone_number1, nick_name1))
 
@@ -60,11 +60,10 @@ print(change_djh_nickname(phone_number1, nick_name1))
 
 
 # if __name__ == "__main__":
-#     for k1, v1 in args.__dict__.items():
-#         # mobile1 = item1[1]
-#         # nickname1 = item2[1]
-#         print(k1, v1)
-    # print(change_djh_nickname(k1, v1))
+#     list1 = list()
+#     for k, v in args.__dict__.items():  # 也可以用 for item in args.__dict__.items()，item为 包含参数和值 的元组
+#         list1.append(v)
+#     print(list1)
 
 
 
