@@ -34,7 +34,7 @@ def change_djh_nickname(mobile, nickname):
 
 
 # 创建解析器：parser
-parser = argparse.ArgumentParser(description="用法：python test_djh.py --mobile xxx --nickname xxx。用-还是--具体看代码中的写法")
+parser = argparse.ArgumentParser(description="用法：python djh_test.py --mobile xxx --nickname xxx。用-还是--具体看代码中的写法")
 parser.add_argument('--mobile', default=15221466224, action='store', required=False, help='用户手机号')  # 添加参数
 parser.add_argument('--nickname', default='帆布鞋丶1', required=False, help='要改的昵称')
 # 参数前的--也可以用-，调用时与代码里写的一致即可
@@ -42,7 +42,7 @@ parser.add_argument('--nickname', default='帆布鞋丶1', required=False, help=
 # 调用参数时，参数名可不写全，会自动识别（所以，有参数都是m开头的单词时，就不能用--m了）
 # default不写时，默认值为None。help：添加参数说明
 # required：为True时，调用时，参数必填；为False时，调用时，可填可不填。   required=xxx可不写，不写时，效果同False
-# 调用命令(执行路径须为文件所在目录，否则须切换路径)：1、python test_djh.py 2、python test_djh.py --mobile xxx --nickname xxx
+# 调用命令(执行路径须为文件所在目录，否则须切换路径)：1、python djh_test.py 2、python djh_test.py --mobile xxx --nickname xxx
 
 # 输入的参数默认为字符串。要改为其他类型，可用选项“type”
 # parser.add_argument('--a', default=5, type=int)
@@ -55,7 +55,7 @@ phone_number1, nick_name1 = args.mobile, args.nickname
 print(change_djh_nickname(phone_number1, nick_name1))
 
 
-# PS：jenkins里用Boolean Parameter时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['test_djh.py', '15221466224', 'true']）
+# PS：jenkins里用Boolean Parameter时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['djh_test.py', '15221466224', 'true']）
 # 想要变成python中的布尔值True和False，可以用语句判断一下，如：if a1 == 'true':  a1 = True
 
 
