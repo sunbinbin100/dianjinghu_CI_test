@@ -36,7 +36,7 @@ def change_djh_nickname(mobile, nickname):
 # 创建解析器：parser
 parser = argparse.ArgumentParser(description="用法：python djh_test.py --mobile xxx --nickname xxx。用-还是--具体看代码中的写法")
 parser.add_argument('--mobile', default=15221466224, action='store', required=False, help='用户手机号')  # 添加参数
-parser.add_argument('--nickname', default='帆布鞋丶1', required=False, help='要改的昵称')
+parser.add_argument('--nickname', default='帆布鞋丶丶丶', required=False, help='要改的昵称')
 # 参数前的--也可以用-，调用时与代码里写的一致即可
 # action：指定参数时可以触发六种操作。可不填，不填时，效果同action='store'
 # 调用参数时，参数名可不写全，会自动识别（所以，有参数都是m开头的单词时，就不能用--m了）
