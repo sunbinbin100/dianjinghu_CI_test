@@ -61,7 +61,7 @@ print(change_djh_nickname(phone_number1, nick_name1))
 
 # if __name__ == "__main__":
 #     list1 = list()
-#     for k, v in args.__dict__.items():  # 也可以用 for item in args.__dict__.items()，item为 包含参数和值 的元组
+#     for k, v in args.__dict__.items():  # 打印参数。也可以用 for item in args.__dict__.items()，item为 包含参数和值 的元组
 #         list1.append(v)
 #     print(list1)
 
