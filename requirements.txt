@@ -9,8 +9,8 @@ prettyprinter~=0.18.0
 
 
 
-
-
+# python3 -m pip install -r <file>    -r：一次安装多个模块
+# pytest 常见执行参数cmd下：https://www.jianshu.com/p/d6b32fcb9b83
 
 
 
