@@ -50,7 +50,7 @@ parser.add_argument('--nickname', default='帆布鞋丶丶丶', required=False, 
 # parser.add_argument('--mode', default='train', choices=['train', 'predict'])
 
 args = parser.parse_args()  # 解析参数
-print('argparse库 获取到的参数为:', args.mobile, args.nickname)  # 类型分别为int和str。也可以用args.__dict__.items()取值
+print('argparse库 获取到的参数为:', args.mobile, args.nickname)  # 类型分别为 int 和 str。也可以用args.__dict__.items()取值
 # phone_number1, nick_name1 = args.mobile, args.nickname
 print(change_djh_nickname(args.mobile, args.nickname))
 
