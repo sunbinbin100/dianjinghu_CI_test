@@ -51,8 +51,8 @@ parser.add_argument('--nickname', default='帆布鞋丶丶丶', required=False, 
 
 args = parser.parse_args()  # 解析参数
 print('argparse库 获取到的参数为:', args.mobile, args.nickname)  # 类型分别为int和str。也可以用args.__dict__.items()取值
-phone_number1, nick_name1 = args.mobile, args.nickname
-print(change_djh_nickname(phone_number1, nick_name1))
+# phone_number1, nick_name1 = args.mobile, args.nickname
+print(change_djh_nickname(args.mobile, args.nickname))
 
 
 # PS：jenkins里用 Boolean Parameter 时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['djh_test.py', '15221466224', 'true']）
@@ -64,11 +64,6 @@ print(change_djh_nickname(phone_number1, nick_name1))
 #     for k, v in args.__dict__.items():  # 打印参数。也可以用 for item in args.__dict__.items()，item为 包含参数和值 的元组
 #         list1.append(v)
 #     print(list1)
-
-
-
-
-
 
 
 
