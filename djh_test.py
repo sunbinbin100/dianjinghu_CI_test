@@ -55,8 +55,8 @@ phone_number1, nick_name1 = args.mobile, args.nickname
 print(change_djh_nickname(phone_number1, nick_name1))
 
 
-# PS：jenkins里用Boolean Parameter时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['djh_test.py', '15221466224', 'true']）
-# 想要变成python中的布尔值True和False，可以用语句判断一下，如：if a1 == 'true':  a1 = True
+# PS：jenkins里用 Boolean Parameter 时，布尔值都是小写的：true/false。且最后都会以字符串形式存在列表中，如：['djh_test.py', '15221466224', 'true']）
+# 想要变成python中的布尔值 True和False，可以：1、用语句判断，如：if a1 == 'true':  a1 = True   2、用json.loads()反序列化，把json对象'true'转为python对象True
 
 
 # if __name__ == "__main__":
@@ -64,7 +64,6 @@ print(change_djh_nickname(phone_number1, nick_name1))
 #     for k, v in args.__dict__.items():  # 打印参数。也可以用 for item in args.__dict__.items()，item为 包含参数和值 的元组
 #         list1.append(v)
 #     print(list1)
-
 
 
 
